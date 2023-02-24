@@ -13,8 +13,9 @@
 		CB7AB3D329A7979300137847 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7AB3D229A7979300137847 /* Preview Assets.xcassets */; };
 		CB7AB3DA29A7B22100137847 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3D929A7B22100137847 /* StarView.swift */; };
 		CB7AB3DC29A7B72300137847 /* BookAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3DB29A7B72300137847 /* BookAddView.swift */; };
-		CB7AB3DE29A7E02600137847 /* BookStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3DD29A7E02600137847 /* BookStorage.swift */; };
-		CB7AB3E029A7E0E900137847 /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3DF29A7E0E900137847 /* BookInfo.swift */; };
+		CB7AB3E729A8118600137847 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3E629A8118600137847 /* DataController.swift */; };
+		CB7AB3EF29A8188800137847 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3ED29A8188800137847 /* CoreData.xcdatamodeld */; };
+		CB7AB3F129A81FCA00137847 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3F029A81FCA00137847 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +26,9 @@
 		CB7AB3D229A7979300137847 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB7AB3D929A7B22100137847 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		CB7AB3DB29A7B72300137847 /* BookAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAddView.swift; sourceTree = "<group>"; };
-		CB7AB3DD29A7E02600137847 /* BookStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStorage.swift; sourceTree = "<group>"; };
-		CB7AB3DF29A7E0E900137847 /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
+		CB7AB3E629A8118600137847 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		CB7AB3EE29A8188800137847 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		CB7AB3F029A81FCA00137847 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				CB7AB3CD29A7979100137847 /* ContentView.swift */,
 				CB7AB3DB29A7B72300137847 /* BookAddView.swift */,
+				CB7AB3F029A81FCA00137847 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -88,11 +91,19 @@
 		CB7AB3E229A7F94400137847 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				CB7AB3E829A8118A00137847 /* Data */,
 				CB7AB3D929A7B22100137847 /* StarView.swift */,
-				CB7AB3DF29A7E0E900137847 /* BookInfo.swift */,
-				CB7AB3DD29A7E02600137847 /* BookStorage.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		CB7AB3E829A8118A00137847 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CB7AB3E629A8118600137847 /* DataController.swift */,
+				CB7AB3ED29A8188800137847 /* CoreData.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,12 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB7AB3E029A7E0E900137847 /* BookInfo.swift in Sources */,
 				CB7AB3DA29A7B22100137847 /* StarView.swift in Sources */,
 				CB7AB3CE29A7979100137847 /* ContentView.swift in Sources */,
+				CB7AB3EF29A8188800137847 /* CoreData.xcdatamodeld in Sources */,
+				CB7AB3F129A81FCA00137847 /* DetailView.swift in Sources */,
 				CB7AB3CC29A7979100137847 /* BookWormApp.swift in Sources */,
+				CB7AB3E729A8118600137847 /* DataController.swift in Sources */,
 				CB7AB3DC29A7B72300137847 /* BookAddView.swift in Sources */,
-				CB7AB3DE29A7E02600137847 /* BookStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +383,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB7AB3ED29A8188800137847 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB7AB3EE29A8188800137847 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = CB7AB3EE29A8188800137847 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CB7AB3C029A7979100137847 /* Project object */;
 }

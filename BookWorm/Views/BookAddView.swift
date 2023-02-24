@@ -9,30 +9,30 @@ import SwiftUI
 
 struct BookAddView: View {
     @Environment(\.dismiss) var dismiss
-    @State var bookTitle : String = ""
-    @State var authorName : String = ""
-    @State var genrePicker: Int = 0
-    @State var review: String = ""
-    @State var rating: Int = 0
-    @State var genres = ["Fantasy","Horror","Mystery","Kids","Poetry","Romance","Thriller"]
-    @State var bookShelf: [Book] = []
-//    var storage : BookStorage
+    @Environment(\.managedObjectContext) var manObjCont
+    @State private var bookTitle : String = ""
+    @State private var authorName : String = ""
+    @State private var genre: String = ""
+    @State private var review: String = ""
+    @State private var rating: Int = 0
+    @State private var genres = ["Fantasy","Horror","Mystery","Kids","Poetry","Romance","Thriller"]
+    
     var body: some View {
         NavigationStack{
             VStack{
                 Form{
                     TextField("Name of Book", text: $bookTitle)
                     TextField("Author's name", text: $authorName)
-                    Picker(selection: $genrePicker) {
-                        ForEach(0 ..< genres.count){
-                            Text(self.genres[$0])
+                    Picker(selection: $genre) {
+                        ForEach(genres, id: \.self){
+                            Text($0)
                         }
                     } label: {
                         Text("Genre")
                     }
                     .pickerStyle(.navigationLink)
                     Section("write a review"){
-                        TextField("", text: $review)
+                        TextEditor(text: $review)
                         Picker(selection: $rating) {
                             ForEach(0 ..< 6){number in
                                 Text("\(number)")
@@ -42,19 +42,22 @@ struct BookAddView: View {
                         }.pickerStyle(.navigationLink)
                     }
                     Button("save"){
-                        let newBook = createBook()
-                        bookShelf.append(newBook)
-                        UserDefaults.standard.set(bookShelf, forKey: "bookShelf")
+                        //creating book
+                        let newBook = Book(context: manObjCont)
+                        newBook.id = UUID()
+                        newBook.title = bookTitle
+                        newBook.author = authorName
+                        newBook.genre = genre
+                        newBook.rating = Int32(rating)
+                        newBook.review = review
+                        
+                        try? manObjCont.save()
                         dismiss()
                     }
                 }
                 Spacer()
             }.navigationTitle("ADD your Book")
         }
-    }
-    func createBook()->Book{
-        let newBook = Book(title: self.bookTitle, author: self.authorName, genre: self.genres[genrePicker], review: self.review, rating: self.rating)
-        return newBook
     }
 
 }
