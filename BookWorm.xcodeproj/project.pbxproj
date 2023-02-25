@@ -14,9 +14,22 @@
 		CB7AB3DA29A7B22100137847 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3D929A7B22100137847 /* StarView.swift */; };
 		CB7AB3DC29A7B72300137847 /* BookAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3DB29A7B72300137847 /* BookAddView.swift */; };
 		CB7AB3E729A8118600137847 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3E629A8118600137847 /* DataController.swift */; };
-		CB7AB3EF29A8188800137847 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3ED29A8188800137847 /* CoreData.xcdatamodeld */; };
-		CB7AB3F129A81FCA00137847 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3F029A81FCA00137847 /* DetailView.swift */; };
+		CB7AB3EF29A8188800137847 /* BookWorm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3ED29A8188800137847 /* BookWorm.xcdatamodeld */; };
+		CB7AB3F529A8DEFB00137847 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3F429A8DEFB00137847 /* DetailView.swift */; };
+		CB7AB3FD29AA381600137847 /* BookWormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3FC29AA381600137847 /* BookWormTests.swift */; };
+		CB7AB40429AA3A6C00137847 /* ForeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB40329AA3A6C00137847 /* ForeImageView.swift */; };
+		CB7AB40529AA40AC00137847 /* BookAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB3DB29A7B72300137847 /* BookAddView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB7AB3FE29AA381600137847 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB7AB3C029A7979100137847 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB7AB3C729A7979100137847;
+			remoteInfo = BookWorm;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CB7AB3C829A7979100137847 /* BookWorm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWorm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,12 +40,22 @@
 		CB7AB3D929A7B22100137847 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		CB7AB3DB29A7B72300137847 /* BookAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAddView.swift; sourceTree = "<group>"; };
 		CB7AB3E629A8118600137847 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		CB7AB3EE29A8188800137847 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
-		CB7AB3F029A81FCA00137847 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CB7AB3EE29A8188800137847 /* BookWorm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookWorm.xcdatamodel; sourceTree = "<group>"; };
+		CB7AB3F429A8DEFB00137847 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CB7AB3FA29AA381600137847 /* BookWormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookWormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB7AB3FC29AA381600137847 /* BookWormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWormTests.swift; sourceTree = "<group>"; };
+		CB7AB40329AA3A6C00137847 /* ForeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CB7AB3C529A7979100137847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB7AB3F729AA381600137847 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7AB3CA29A7979100137847 /* BookWorm */,
+				CB7AB3FB29AA381600137847 /* BookWormTests */,
 				CB7AB3C929A7979100137847 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7AB3C829A7979100137847 /* BookWorm.app */,
+				CB7AB3FA29AA381600137847 /* BookWormTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,7 +108,7 @@
 			children = (
 				CB7AB3CD29A7979100137847 /* ContentView.swift */,
 				CB7AB3DB29A7B72300137847 /* BookAddView.swift */,
-				CB7AB3F029A81FCA00137847 /* DetailView.swift */,
+				CB7AB3F429A8DEFB00137847 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,8 +116,9 @@
 		CB7AB3E229A7F94400137847 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				CB7AB3E829A8118A00137847 /* Data */,
 				CB7AB3D929A7B22100137847 /* StarView.swift */,
+				CB7AB40329AA3A6C00137847 /* ForeImageView.swift */,
+				CB7AB3E829A8118A00137847 /* Data */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -101,9 +127,17 @@
 			isa = PBXGroup;
 			children = (
 				CB7AB3E629A8118600137847 /* DataController.swift */,
-				CB7AB3ED29A8188800137847 /* CoreData.xcdatamodeld */,
+				CB7AB3ED29A8188800137847 /* BookWorm.xcdatamodeld */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		CB7AB3FB29AA381600137847 /* BookWormTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB7AB3FC29AA381600137847 /* BookWormTests.swift */,
+			);
+			path = BookWormTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +160,24 @@
 			productReference = CB7AB3C829A7979100137847 /* BookWorm.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CB7AB3F929AA381600137847 /* BookWormTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB7AB40229AA381600137847 /* Build configuration list for PBXNativeTarget "BookWormTests" */;
+			buildPhases = (
+				CB7AB3F629AA381600137847 /* Sources */,
+				CB7AB3F729AA381600137847 /* Frameworks */,
+				CB7AB3F829AA381600137847 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB7AB3FF29AA381600137847 /* PBXTargetDependency */,
+			);
+			name = BookWormTests;
+			productName = BookWormTests;
+			productReference = CB7AB3FA29AA381600137847 /* BookWormTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -138,6 +190,10 @@
 				TargetAttributes = {
 					CB7AB3C729A7979100137847 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					CB7AB3F929AA381600137847 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = CB7AB3C729A7979100137847;
 					};
 				};
 			};
@@ -155,6 +211,7 @@
 			projectRoot = "";
 			targets = (
 				CB7AB3C729A7979100137847 /* BookWorm */,
+				CB7AB3F929AA381600137847 /* BookWormTests */,
 			);
 		};
 /* End PBXProject section */
@@ -169,6 +226,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB7AB3F829AA381600137847 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -176,17 +240,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7AB40429AA3A6C00137847 /* ForeImageView.swift in Sources */,
 				CB7AB3DA29A7B22100137847 /* StarView.swift in Sources */,
 				CB7AB3CE29A7979100137847 /* ContentView.swift in Sources */,
-				CB7AB3EF29A8188800137847 /* CoreData.xcdatamodeld in Sources */,
-				CB7AB3F129A81FCA00137847 /* DetailView.swift in Sources */,
+				CB7AB3EF29A8188800137847 /* BookWorm.xcdatamodeld in Sources */,
+				CB7AB3F529A8DEFB00137847 /* DetailView.swift in Sources */,
 				CB7AB3CC29A7979100137847 /* BookWormApp.swift in Sources */,
 				CB7AB3E729A8118600137847 /* DataController.swift in Sources */,
 				CB7AB3DC29A7B72300137847 /* BookAddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB7AB3F629AA381600137847 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB7AB3FD29AA381600137847 /* BookWormTests.swift in Sources */,
+				CB7AB40529AA40AC00137847 /* BookAddView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB7AB3FF29AA381600137847 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB7AB3C729A7979100137847 /* BookWorm */;
+			targetProxy = CB7AB3FE29AA381600137847 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CB7AB3D429A7979300137847 /* Debug */ = {
@@ -361,6 +443,42 @@
 			};
 			name = Release;
 		};
+		CB7AB40029AA381600137847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V76KMBCZ33;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyryloKolosov.BookWormTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookWorm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BookWorm";
+			};
+			name = Debug;
+		};
+		CB7AB40129AA381600137847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V76KMBCZ33;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyryloKolosov.BookWormTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookWorm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BookWorm";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -382,16 +500,25 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CB7AB40229AA381600137847 /* Build configuration list for PBXNativeTarget "BookWormTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB7AB40029AA381600137847 /* Debug */,
+				CB7AB40129AA381600137847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CB7AB3ED29A8188800137847 /* CoreData.xcdatamodeld */ = {
+		CB7AB3ED29A8188800137847 /* BookWorm.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CB7AB3EE29A8188800137847 /* CoreData.xcdatamodel */,
+				CB7AB3EE29A8188800137847 /* BookWorm.xcdatamodel */,
 			);
-			currentVersion = CB7AB3EE29A8188800137847 /* CoreData.xcdatamodel */;
-			path = CoreData.xcdatamodeld;
+			currentVersion = CB7AB3EE29A8188800137847 /* BookWorm.xcdatamodel */;
+			path = BookWorm.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

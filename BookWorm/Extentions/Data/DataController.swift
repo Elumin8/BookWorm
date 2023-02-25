@@ -9,12 +9,12 @@ import Foundation
 import CoreData
 
 class DataController: ObservableObject{
-    let container = NSPersistentContainer(name: "CoreData")
+    let container = NSPersistentContainer(name: "BookWorm")
     
     init(){
         container.loadPersistentStores { description, error in
-            if let newError = error{
-                print("Coredata fetch error:\(error)")
+            if error != nil{
+                print("Coredata fetch error:\(error?.localizedDescription)")
             }
             
         }

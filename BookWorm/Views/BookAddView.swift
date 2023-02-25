@@ -10,12 +10,13 @@ import SwiftUI
 struct BookAddView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var manObjCont
-    @State private var bookTitle : String = ""
-    @State private var authorName : String = ""
-    @State private var genre: String = ""
-    @State private var review: String = ""
-    @State private var rating: Int = 0
-    @State private var genres = ["Fantasy","Horror","Mystery","Kids","Poetry","Romance","Thriller"]
+    @State var bookTitle : String = ""
+    @State var authorName : String = ""
+    @State var genre: String = "Fantasy"
+    @State var review: String = ""
+    @State var rating: Int = 0
+    @State var genres = ["Fantasy","Horror","Mystery","Kids","Poetry","Romance","Thriller"]
+    @State var additionalButton = false
     
     var body: some View {
         NavigationStack{
@@ -43,24 +44,32 @@ struct BookAddView: View {
                     }
                     Button("save"){
                         //creating book
-                        let newBook = Book(context: manObjCont)
-                        newBook.id = UUID()
-                        newBook.title = bookTitle
-                        newBook.author = authorName
-                        newBook.genre = genre
-                        newBook.rating = Int32(rating)
-                        newBook.review = review
-                        
-                        try? manObjCont.save()
-                        dismiss()
+                        if bookTitle != "" && authorName != ""{
+                            let newBook = Book(context: manObjCont)
+                            newBook.id = UUID()
+                            newBook.title = bookTitle
+                            newBook.author = authorName
+                            newBook.genre = genre
+                            newBook.rating = Int32(rating)
+                            newBook.review = review
+                            try? manObjCont.save()
+                            dismiss()
+                        }else{
+                            additionalButton = true
+                        }
                     }
                 }
+                
+                Text("Write book's name and book's author please!")
+                    .opacity(additionalButton ? 1 : 0)
+                    .animation(.easeIn(duration: 0.5), value: additionalButton)
                 Spacer()
             }.navigationTitle("ADD your Book")
         }
     }
-
+    
 }
+
 struct BookAddView_Previews: PreviewProvider {
     static var previews: some View {
         BookAddView()

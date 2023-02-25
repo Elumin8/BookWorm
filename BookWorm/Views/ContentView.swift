@@ -9,12 +9,13 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @StateObject var starRating = Star()
     @State private var bookAddShow = false
     @State private var bookShown = false
     @Environment(\.managedObjectContext) var manObjCont
-    @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>
-
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.genre)
+    ]) var books: FetchedResults<Book>
+    
     var body: some View {
         NavigationStack{
             List{
@@ -29,44 +30,57 @@ struct ContentView: View {
                             Text("Add new book")
                                 .font(.system(size: 20))
                         }.buttonStyle(.borderedProminent)
+                        
                     }
                 }else{
                     Section("Books"){
                         ForEach(books){book in
                             NavigationLink {
-                                DetailView()
+                                DetailView(book: book)
                             }label: {
                                 HStack{
-                                    Text("😍")
-                                        .font(.system(size: 40))
+                                    ForeImageView(book: book)
                                     Spacer().frame(width: 20)
                                     VStack(alignment: .leading){
                                         Text(book.title ?? "Unknown")
                                             .multilineTextAlignment(.leading)
-                                        Text(book.title ?? "Unknown")
+                                        Text(book.author ?? "Unknown")
                                             .foregroundColor(.secondary)
                                     }
                                 }
                             }
                         }
+                        .onDelete(perform: deleteBooks)
+                    }
+                    
                 }//:Section
             }
-        }//:List
-        
-        .navigationTitle("BookWorm")
-        .navigationBarTitleDisplayMode(.large)
-        .toolbar(content: {
-            Button {
-                bookAddShow.toggle()
-            } label: {
-                Image(systemName: "plus")
-            }.sheet(isPresented: $bookAddShow) {
-                BookAddView()
+            .navigationTitle("BookWorm")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        bookAddShow.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .sheet(isPresented: $bookAddShow) {
+                        BookAddView()
+                    }
+                }
             }
-            
-        })
-    }//:NavStack
-}
+        }
+    }
+    func deleteBooks(at shifts: IndexSet) {
+        for shift in shifts {
+            let book = books[shift]
+            manObjCont.delete(book)
+            try? manObjCont.save()
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
